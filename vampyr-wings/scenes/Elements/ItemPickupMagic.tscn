@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkssi15ct6a5j"]
+
+[ext_resource type="Texture2D" uid="uid://ciocj8r28wj2q" path="res://scenes/PowerUp/macherryglow.png" id="1_o40vg"]
+[ext_resource type="Script" uid="uid://cwcqg5erf2fk3" path="res://scenes/Elements/magic_pickup.gd" id="1_pt482"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt482"]
+radius = 12.0
+
+[node name="ItemPickupMagic" type="Node2D"]
+
+[node name="MagicPickup" type="Area2D" parent="."]
+script = ExtResource("1_pt482")
+icon = ExtResource("1_o40vg")
+
+[node name="Macherryglow" type="Sprite2D" parent="MagicPickup"]
+position = Vector2(0.99999994, -5)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_o40vg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagicPickup"]
+position = Vector2(1, -3)
+shape = SubResource("CircleShape2D_pt482")

@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpobm4pqw360p"]
+
+[ext_resource type="PackedScene" uid="uid://dp468rc5yqfpd" path="res://scenes/Levels/level_1.tscn" id="1_4l56l"]
+[ext_resource type="PackedScene" uid="uid://edny0xnsfjdt" path="res://scenes/Elements/door.tscn" id="2_g6x5f"]
+[ext_resource type="PackedScene" uid="uid://be4hwj6y4gaw0" path="res://scenes/Player/player2.tscn" id="3_8idfq"]
+[ext_resource type="PackedScene" uid="uid://ceejl7mpswoys" path="res://scenes/Interface/pause_menu.tscn" id="4_xwq02"]
+[ext_resource type="Script" uid="uid://bhlbp2rphbisb" path="res://assets/scripts/darkness_controller_2.gd" id="6_g6x5f"]
+[ext_resource type="PackedScene" uid="uid://cegc07m1wmtm2" path="res://scenes/Enemies/Enemy_Scorpion.tscn" id="7_8idfq"]
+[ext_resource type="PackedScene" uid="uid://cjjnvw4nxwn36" path="res://scenes/Elements/ItemPickup300.tscn" id="7_xwq02"]
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="9_82g72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwq02"]
+size = Vector2(16, 59.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82g72"]
+size = Vector2(4, 13)
+
+[node name="Vampayaa" type="Node2D"]
+
+[node name="Level2" parent="." instance=ExtResource("1_4l56l")]
+position = Vector2(-4, -5)
+
+[node name="PauseMenu" parent="Level2" instance=ExtResource("4_xwq02")]
+
+[node name="Door" parent="Level2" instance=ExtResource("2_g6x5f")]
+position = Vector2(63, 139)
+
+[node name="Danger" type="CanvasLayer" parent="Level2"]
+layer = 0
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
+follow_viewport_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Level2/Danger"]
+offset_left = 565.0
+offset_top = 102.5
+offset_right = 692.5
+offset_bottom = 177.49998
+theme_override_fonts/normal_font = ExtResource("9_82g72")
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#FF0000]Enemy!
+      ▼[/pulse]
+
+"
+
+[node name="Player" parent="Level2" node_paths=PackedStringArray("death_marker") instance=ExtResource("3_8idfq")]
+position = Vector2(166, 152)
+death_marker = NodePath("../../DeathZone")
+
+[node name="EnemyGlow" type="CanvasLayer" parent="Level2"]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Scorpion" parent="Level2/EnemyGlow" instance=ExtResource("7_8idfq")]
+visibility_layer = 2
+position = Vector2(285, 63)
+collision_layer = 5
+
+[node name="DarknessController2" type="Node2D" parent="."]
+position = Vector2(-4, -5)
+script = ExtResource("6_g6x5f")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="DarknessController2"]
+
+[node name="ItemPickup300" parent="." instance=ExtResource("7_xwq02")]
+position = Vector2(265, 158)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(324, 61)
+shape = SubResource("RectangleShape2D_xwq02")
+
+[node name="EnemyGlow" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="EnemyGlow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyGlow/StaticBody2D2"]
+position = Vector2(240, 84.5)
+shape = SubResource("RectangleShape2D_82g72")
+
+[node name="DeathZone" type="Marker2D" parent="."]
+position = Vector2(-59, 206)

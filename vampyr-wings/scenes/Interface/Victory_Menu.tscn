@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn4ss0c51d2kx"]
+
+[ext_resource type="Script" uid="uid://bp0jiaejnq05y" path="res://assets/scripts/victory_menu_2.gd" id="1_qerwu"]
+[ext_resource type="Texture2D" uid="uid://ceycuthllxfbc" path="res://scenes/Interface/str_blood_large.png" id="2_r61jr"]
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="3_qy767"]
+[ext_resource type="Theme" uid="uid://bsmlb2h70j8vx" path="res://assets/Typesetting/Theme_Buttons_.tres" id="4_a6xft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxcub"]
+
+[node name="Control" type="CanvasLayer"]
+offset = Vector2(100, 0)
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 100, 0)
+script = ExtResource("1_qerwu")
+
+[node name="StrBloodLarge" type="Sprite2D" parent="."]
+position = Vector2(154, 168)
+scale = Vector2(3.015625, 2.046875)
+texture = ExtResource("2_r61jr")
+
+[node name="Title" type="Label" parent="."]
+offset_left = -50.0
+offset_top = 28.0
+offset_right = 305.0
+offset_bottom = 123.0
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_constants/outline_size = 35
+theme_override_fonts/font = ExtResource("3_qy767")
+theme_override_font_sizes/font_size = 65
+text = "You lost!"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = 164.0
+offset_right = 112.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sxcub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 90
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_a6xft")
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="Menu_Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_a6xft")
+text = "Back to Main Menu"
+
+[node name="Quit_Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_a6xft")
+text = "Quit Game"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]

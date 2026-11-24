@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc1d1biox4nhc"]
+
+[ext_resource type="Texture2D" uid="uid://nfymeraa0nrl" path="res://assets/terrain/Screenshot 2025-07-29 061635.png" id="1_1l0pb"]
+[ext_resource type="Theme" uid="uid://bsmlb2h70j8vx" path="res://assets/Typesetting/Theme_Buttons_.tres" id="2_oaw17"]
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="3_kyf80"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaw17"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 40.0
+offset_right = -8.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screenshot20250729061635" type="Sprite2D" parent="."]
+position = Vector2(156, 190.00002)
+scale = Vector2(3.1177607, 1.9976745)
+texture = ExtResource("1_1l0pb")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.5
+offset_top = -4.0
+offset_right = 118.5
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oaw17")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 90
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_constants/outline_size = 35
+theme_override_fonts/font = ExtResource("3_kyf80")
+theme_override_font_sizes/font_size = 65
+text = "Level Cleared!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_oaw17")
+theme_override_constants/separation = 15
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next Level"
+
+[node name="Menu_Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_oaw17")
+text = "Back to Main Menu"
+
+[node name="Quit_Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_oaw17")
+text = "Quit Game"

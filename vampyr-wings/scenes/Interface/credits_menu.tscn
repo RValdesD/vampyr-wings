@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://22jygqlx2nmy"]
+
+[ext_resource type="Script" uid="uid://bigrkfd403b1c" path="res://scenes/Interface/credits_menu.gd" id="1_ryxyw"]
+[ext_resource type="Texture2D" uid="uid://cbxfj427r82i3" path="res://assets/terrain/Clouds/Clouds 3/1.png" id="2_ryxyw"]
+
+[sub_resource type="FontFile" id="FontFile_5c5ko"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryxyw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.5
+offset_top = -68.5
+offset_right = 121.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ryxyw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-30, -26)
+theme_override_fonts/normal_font = SubResource("FontFile_5c5ko")
+bbcode_enabled = true
+text = "[center]
+[outline_color=black][outline_size=20]
+[font=\"res://assets/Typesetting/antiquity-print.ttf\"][wave][font_size=39]Credits
+[/font_size][/wave]
+[outline_size=15][font_size=26]
+Sprites
+[font_size=13][outline_size=5]
+Enemy Scorpion 
+by mpandiarajan.itch.io
+[/outline_size][/font_size]
+
+Tileset
+[font_size=13][outline_size=5]
+Dark Castle
+by quintino-pixels.itch.io
+
+Platformer Village 
+by cainos.itch.io
+
+Jungle pack
+by jesse-m.itch.io / @Jsf23Art
+[/outline_size][/font_size]
+
+Background
+[font_size=13][outline_size=5]
+Level backgrounds and credits backgrounds 
+		by free-game-assets.itch.io
+
+Level backgrounds
+ by anokolisa.itch.io
+[/outline_size][/font_size]
+
+Fonts
+[font_size=13][outline_size=5]
+Font Antiquity-Print
+ by ninjikin.itch.io
+[/outline_size][/font_size]
+
+Music
+[font_size=13][outline_size=5]
+PONER SI ES NECESARIO, SI NO, ELIMINAR
+[/outline_size][/font_size]
+
+Sounds Effects
+[/font_size]
+[font_size=13][outline_size=5]
+PONER SI ES NECESARIO, SI NO, ELIMINAR
+[/outline_size][/font_size]
+[/outline_size]"
+scroll_active = false

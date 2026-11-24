@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjjnvw4nxwn36"]
+
+[ext_resource type="Script" uid="uid://cq8ppc4bfhrim" path="res://scenes/Elements/area_2d.gd" id="1_ix4t3"]
+[ext_resource type="Texture2D" uid="uid://cdvdm6pl5eoi5" path="res://scenes/Elements/dark_castle_tileset.png" id="2_l50ob"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix4t3"]
+radius = 7.0
+
+[sub_resource type="TileSet" id="TileSet_boy8o"]
+
+[node name="ItemPickup" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_ix4t3")
+
+[node name="DarkCastleTileset" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_l50ob")
+region_enabled = true
+region_rect = Rect2(17.07988, 82.09401, 13.669266, 12.590103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ix4t3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_boy8o")

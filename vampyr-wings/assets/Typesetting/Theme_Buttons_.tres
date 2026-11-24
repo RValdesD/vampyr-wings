@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bsmlb2h70j8vx"]
+
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="1_14g6u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im1bb"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbuy5"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij821"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1ol8"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.9499975, 0, 0.1428257, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 20
+Button/font_sizes/font_size = 31
+Button/fonts/font = ExtResource("1_14g6u")
+Button/styles/focus = SubResource("StyleBoxFlat_im1bb")
+Button/styles/hover = SubResource("StyleBoxFlat_hbuy5")
+Button/styles/normal = SubResource("StyleBoxFlat_ij821")
+Button/styles/pressed = SubResource("StyleBoxFlat_h1ol8")
+Tema_botones/font_sizes/font_size = 20
+Tema_botones/fonts/font = null

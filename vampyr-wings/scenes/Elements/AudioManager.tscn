@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bai41vhh86qjb"]
+
+[ext_resource type="Script" uid="uid://cx3xnsh5yw17c" path="res://assets/scripts/audio_manager.gd" id="1_d2255"]
+[ext_resource type="AudioStream" uid="uid://b34ycdc48ybf5" path="res://scenes/Interface/Autumn_Glow.mp3" id="2_ym7ej"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_d2255")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ym7ej")

@@ -1,0 +1,157 @@
+[gd_scene load_steps=17 format=3 uid="uid://cegc07m1wmtm2"]
+
+[ext_resource type="Material" uid="uid://cccg50whbt4r" path="res://assets/shaders/outline_shader.tres" id="1_0wv8a"]
+[ext_resource type="Script" uid="uid://cag75cifriq5x" path="res://assets/scripts/enemy_scorpion.gd" id="2_hr4so"]
+[ext_resource type="Texture2D" uid="uid://btqgmbgkf8sgu" path="res://assets/sprites/scorpion1.png" id="3_bptf8"]
+[ext_resource type="Texture2D" uid="uid://ccwt6md0xh7aj" path="res://assets/sprites/scorpion2.png" id="4_cauvj"]
+[ext_resource type="Texture2D" uid="uid://bdp1nj0chlhfr" path="res://assets/sprites/scorpion3.png" id="5_pah5o"]
+[ext_resource type="Script" uid="uid://buiebsla8wul6" path="res://assets/scripts/Hurtbox.gd" id="6_hr4so"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bptf8"]
+radius = 19.0
+height = 82.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cauvj"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pah5o"]
+radius = 6.999999
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_b2d6k"]
+resource_name = "Idle"
+length = 0.733337
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scorpion1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_bptf8"), ExtResource("4_cauvj"), ExtResource("5_pah5o"), ExtResource("4_cauvj"), ExtResource("3_bptf8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scorpion1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ovige"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scorpion1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bptf8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scorpion1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_slk2y"]
+_data = {
+&"Idle": SubResource("Animation_b2d6k"),
+&"RESET": SubResource("Animation_ovige")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iswx6"]
+radius = 18.0
+height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bev5d"]
+radius = 17.599934
+height = 76.65066
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hr4so"]
+radius = 6.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wv8a"]
+radius = 5.0
+height = 18.0
+
+[node name="Scorpion" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("2_hr4so")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bptf8")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(26, -9)
+shape = SubResource("CapsuleShape2D_cauvj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(11, -21)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pah5o")
+
+[node name="Scorpion1" type="Sprite2D" parent="."]
+material = ExtResource("1_0wv8a")
+position = Vector2(0, -4)
+texture = ExtResource("3_bptf8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_slk2y")
+}
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("6_hr4so")
+metadata/_custom_type_script = "uid://buiebsla8wul6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-3, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_iswx6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9999999, 12)
+rotation = 1.5707964
+scale = Vector2(1.0227311, 1.0176038)
+shape = SubResource("CapsuleShape2D_bev5d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(11, -21)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hr4so")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(26, -9)
+scale = Vector2(1, 1.0987976)
+shape = SubResource("CapsuleShape2D_0wv8a")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

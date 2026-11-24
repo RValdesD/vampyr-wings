@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://de04pren4arpe"]
+
+[ext_resource type="Script" uid="uid://c3n5bmdtn4tcj" path="res://scenes/Interface/powerup_ui.gd" id="1_r006f"]
+[ext_resource type="Texture2D" uid="uid://bkfu6cg6k7vr5" path="res://scenes/Interface/boxbox.png" id="2_qgyec"]
+
+[node name="PowerupUi" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_r006f")
+
+[node name="PowerupUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 116.5
+offset_top = -22.0
+offset_right = 135.5
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="SlotBG" type="TextureRect" parent="PowerupUI"]
+modulate = Color(1.2425683, 0.719012, 1.6512516, 1)
+visibility_layer = 9
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 195.0
+offset_bottom = 195.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_qgyec")
+stretch_mode = 2
+
+[node name="SlotIcon" type="TextureRect" parent="PowerupUI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 434.0
+offset_bottom = 475.0
+scale = Vector2(0.03, 0.03)

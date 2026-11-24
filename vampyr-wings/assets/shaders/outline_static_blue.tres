@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4j22glp7xrj3"]
+
+[ext_resource type="Shader" uid="uid://dcx0jikdvsjsf" path="res://assets/shaders/outline_static_blue.gdshader" id="1_2qdjp"]
+
+[resource]
+shader = ExtResource("1_2qdjp")
+shader_parameter/outline_color = Color(0.3, 0.8, 1, 1)
+shader_parameter/border_thickness = 0.05
+shader_parameter/glow_strength = 0.0
+shader_parameter/player_pos = Vector2(0, 0)
+shader_parameter/reveal_radius = 0.0
+shader_parameter/viewport_size = Vector2(0, 0)

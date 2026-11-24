@@ -1,0 +1,13 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjcy3idsmq2cf"]
+
+[ext_resource type="Script" uid="uid://shwkk83e8bkk" path="res://assets/scripts/level_manager.gd" id="1_gpfvb"]
+[ext_resource type="PackedScene" uid="uid://cpobm4pqw360p" path="res://scenes/Gameplay/vampayaa.tscn" id="2_k1abw"]
+[ext_resource type="PackedScene" uid="uid://dujsebcnfqf27" path="res://scenes/Gameplay/Tutorial.tscn" id="2_linrt"]
+[ext_resource type="PackedScene" uid="uid://uww643t1cyky" path="res://scenes/Gameplay/wing.tscn" id="3_5x5fn"]
+[ext_resource type="PackedScene" uid="uid://c2ygkhgs2qbht" path="res://scenes/Gameplay/level_3.tscn" id="4_3iau7"]
+[ext_resource type="PackedScene" uid="uid://gkrwjd0i5j1o" path="res://scenes/Gameplay/level_4.tscn" id="5_linrt"]
+[ext_resource type="PackedScene" uid="uid://2138c103shle" path="res://scenes/Gameplay/boss_level.tscn" id="6_320rx"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_gpfvb")
+levels = Array[PackedScene]([ExtResource("2_linrt"), ExtResource("2_k1abw"), ExtResource("3_5x5fn"), ExtResource("4_3iau7"), ExtResource("5_linrt"), ExtResource("6_320rx")])

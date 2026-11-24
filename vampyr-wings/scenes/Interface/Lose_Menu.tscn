@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0jhwdaoedgl7"]
+
+[ext_resource type="Script" uid="uid://dts27bkb17a7r" path="res://assets/scripts/lose_menu.gd" id="1_do7jo"]
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="2_do7jo"]
+[ext_resource type="Texture2D" uid="uid://ceycuthllxfbc" path="res://scenes/Interface/str_blood_large.png" id="2_lixsr"]
+[ext_resource type="Theme" uid="uid://bsmlb2h70j8vx" path="res://assets/Typesetting/Theme_Buttons_.tres" id="3_lixsr"]
+
+[node name="Control" type="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+script = ExtResource("1_do7jo")
+
+[node name="StrBloodLarge" type="Sprite2D" parent="."]
+modulate = Color(0.27022192, 0.27022192, 0.2702219, 1)
+position = Vector2(324, 184.00002)
+scale = Vector2(2.8260164, 1.8867188)
+texture = ExtResource("2_lixsr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 170.0
+offset_top = 72.0
+offset_right = 570.0
+offset_bottom = 428.0
+scale = Vector2(0.7, 0.7)
+size_flags_vertical = 4
+theme_override_constants/separation = 90
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 35
+theme_override_fonts/font = ExtResource("2_do7jo")
+theme_override_font_sizes/font_size = 65
+text = "You  Lost!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Retry_Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lixsr")
+theme_override_fonts/font = ExtResource("2_do7jo")
+text = "Retry"
+
+[node name="Menu_Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lixsr")
+text = "Back to Main Menu"
+
+[node name="Quit_Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_lixsr")
+text = "Quit Game"

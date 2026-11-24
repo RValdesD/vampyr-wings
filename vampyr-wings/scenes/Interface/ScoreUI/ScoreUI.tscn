@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwv3wk6amgy7o"]
+
+[ext_resource type="Script" uid="uid://dxkqyloglcwlq" path="res://scenes/Interface/ScoreUI/score_ui.gd" id="1_xuf2o"]
+[ext_resource type="FontFile" uid="uid://dtq4qmowamips" path="res://assets/Typesetting/antiquity-print.ttf" id="2_1itq4"]
+
+[node name="ScoreDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xuf2o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 152.0
+offset_right = 210.0
+offset_bottom = 184.0
+theme_override_colors/default_color = Color(0.8788828, 0.20169464, 0.8259697, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_1itq4")
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+text = "score"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 85.0
+offset_top = 168.0
+offset_right = 585.0
+offset_bottom = 221.0
+scale = Vector2(0.3, 0.3)
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Digit0" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit6" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit7" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit8" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Digit9" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2

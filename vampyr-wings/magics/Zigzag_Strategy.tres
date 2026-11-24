@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MagicStrategy" load_steps=2 format=3 uid="uid://d4n1opq5natnx"]
+
+[ext_resource type="Script" uid="uid://ciird466qjv2g" path="res://magics/MagicStrategy.gd" id="1_y4jsu"]
+
+[resource]
+script = ExtResource("1_y4jsu")
+metadata/_custom_type_script = "uid://ciird466qjv2g"
